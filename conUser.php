@@ -26,7 +26,7 @@ require 'UsuarioDTO.php';
 		$udao = new UsuarioDAOImpl();
 		$udao->insertUsuario($udto);
 		
-		header('Location: http://abm.test/vistas/crudFormUsuario.php');
+		header('Location: http://159.203.86.158/abm/vistas/crudFormUsuario.php');
 	}
 	
 	if($v2==2){
@@ -34,7 +34,7 @@ require 'UsuarioDTO.php';
 		$udao = new UsuarioDAOImpl();
 		$udao->deleteUsuario($id);
 		
-		header('Location: http://abm.test/vistas/crudFormUsuario.php');
+		header('Location: http://159.203.86.158/abm/vistas/crudFormUsuario.php');
 	}
 
 	if($v3==3){
@@ -48,7 +48,7 @@ require 'UsuarioDTO.php';
 		$udao = new UsuarioDAOImpl();
 		$udao->updateUsuario($udtoUp, $uid);
 	
-		header('Location: http://abm.test/vistas/crudFormUsuario.php');
+		header('Location: http://159.203.86.158/abm/vistas/crudFormUsuario.php');
 	}
 
 function getAllFuncionario(){

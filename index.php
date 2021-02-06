@@ -1,6 +1,9 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+include(__DIR__."/UserClass.php");
 include("includes/config.php");
-include('userClass.php');
+
 $userClass = new userClass();
 
 

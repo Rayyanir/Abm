@@ -7,8 +7,8 @@
 	function __construct()
 	{
 		$conection['user']="root";        
-		$conection['pass']="";            
-		$this->con = new PDO('mysql:host=localhost;dbname=test', $conection['user'], $conection['pass']);
+		$conection['pass']="password";            
+		$this->con = new PDO('mysql:host=localhost;dbname=test_abm', $conection['user'], $conection['pass']);
 	
 	}
 	

@@ -3,9 +3,9 @@ session_start();
 /* DATABASE CONFIGURATION */
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_DATABASE', 'test');
-define("BASE_URL", "http://abm.test/"); // Eg. http://yourwebsite.com
+define('DB_PASSWORD', 'password');
+define('DB_DATABASE', 'test_abm');
+define("BASE_URL", "http://159.203.86.158/abm/"); 
 
 
 function getDB() 
