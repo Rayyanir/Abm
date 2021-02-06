@@ -16,15 +16,15 @@
 CREATE DATABASE IF NOT EXISTS `test` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `test`;
 
--- Volcando estructura para tabla test.usuarios
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `iduser` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(50) DEFAULT NULL,
-  `apellido` varchar(50) DEFAULT NULL,
-  `usuario` varchar(80) DEFAULT NULL,
-  `passw` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`iduser`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+-- Volcando estructura para tabla test.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `email` varchar(80) DEFAULT NULL,
+  `password` longtext,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
 
 -- La exportación de datos fue deseleccionada.
 
