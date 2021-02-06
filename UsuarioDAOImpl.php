@@ -16,11 +16,11 @@ class UsuarioDAOImpl implements UsuarioDAO
 			$email = $udto->getEmail();
 			$pass = $udto->getPassword();
 
-			$pass=hash('sha256', $pass);
+			$pass = hash('sha256', $pass);
 
 			$query = "INSERT INTO users(name, username, email, password) 
 				VALUES('$name', '$username', '$email', '$pass');";
-			$result = $con->query($query);
+			mysql_query($query);
 			echo "New record created successfully";
 		} catch (\Throwable $e) {
 			echo 'Error de conexión: ' . $e->getMessage();
@@ -35,7 +35,7 @@ class UsuarioDAOImpl implements UsuarioDAO
 			$con = $cnn->getConexion();
 
 			$query = "DELETE FROM users WHERE uid=$id";
-			$con->query($query);
+			mysql_query($query);
 		} catch (\Throwable $e) {
 			echo 'Error de conexión: ' . $e->getMessage();
 			exit;
@@ -52,7 +52,7 @@ class UsuarioDAOImpl implements UsuarioDAO
 			$username = $udto->getUsername();
 			$email = $udto->getEmail();
 			$pass = $udto->getPassword();
-			$pass=hash('sha256', $pass);
+			$pass = hash('sha256', $pass);
 
 			$query = "UPDATE users 
 				SET name 	 = '$name', 
@@ -60,7 +60,7 @@ class UsuarioDAOImpl implements UsuarioDAO
 		            email  = '$email',
 					password    = '$pass'
 				WHERE uid = $uid ";
-			$con->query($query);
+			mysql_query($query);
 		} catch (\Throwable $e) {
 			echo 'Error de conexión: ' . $e->getMessage();
 			exit;
@@ -74,7 +74,7 @@ class UsuarioDAOImpl implements UsuarioDAO
 			$con = $cnn->getConexion();
 
 			$query = "SELECT * FROM users ORDER BY uid DESC";
-			$result = $con->query($query);
+			$result = mysql_query($query);
 
 			return $result;
 		} catch (\Throwable $e) {
@@ -90,7 +90,7 @@ class UsuarioDAOImpl implements UsuarioDAO
 			$con = $cnn->getConexion();
 
 			$query = "SELECT * FROM users WHERE uid  = $iduser;";
-			$result = $con->query($query);
+			$result = mysql_query($query);
 
 			return $result;
 		} catch (\Throwable $e) {

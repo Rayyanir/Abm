@@ -55,5 +55,3 @@ function getAllFuncionario(){
 	$udao = new UsuarioDAOImpl();
 	return $udao->getAllUsuario();
 }
-
-?>

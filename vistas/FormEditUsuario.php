@@ -2,8 +2,9 @@
 require '../conUser.php';
 
 $udaimpl = new UsuarioDAOImpl();
-$res = $udaimpl->getUsuarioById($id);
-foreach ($res as $key => $value) {
+$result = $udaimpl->getUsuarioById($id);
+
+while ($value = mysql_fetch_array($result, MYSQL_NUM)){
 
 ?>
 	<!DOCTYPE html>
@@ -22,7 +23,7 @@ foreach ($res as $key => $value) {
 		<div class="container" id="formAbmUsuario">
 			<form action="../conUser.php" method="post" id="abmFormUsuario" name="abmFormUsuario">
 				<input type="hidden" name="v3" value="3">
-				<input type="hidden" name="uid" value="<?php echo $value['uid']; ?>">
+				<input type="hidden" name="uid" value="<?php echo $value['0']; ?>">
 				
 					<div class="card-body">
 
@@ -30,22 +31,22 @@ foreach ($res as $key => $value) {
 
 						<div class="mb-3">
 							<label for="name" class="form-label">Name</label>
-							<input type="text" class="form-control" name="name" id="name" placeholder="Ingresa tu nombre" value="<?php echo $value['name']; ?>">
+							<input type="text" class="form-control" name="name" id="name" placeholder="Ingresa tu nombre" value="<?php echo $value['1']; ?>">
 						</div>
 
 						<div class="mb-3">
 							<label for="userName" class="form-label">UserName</label>
-							<input type="text" class="form-control" name="username" id="userName" placeholder="usuario" value="<?php echo $value['username']; ?>">
+							<input type="text" class="form-control" name="username" id="userName" placeholder="usuario" value="<?php echo $value['2']; ?>">
 						</div>
 
 						<div class="mb-3">
 							<label for="email" class="form-label">Email address</label>
-							<input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" value="<?php echo $value['email']; ?> ">
+							<input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" value="<?php echo $value['3']; ?> ">
 						</div>
 
 						<div class="mb-3">
 							<label for="password" class="form-label">Password</label>
-							<input type="password" class="form-control" name="password" id="password" value="<?php echo $value['password']; ?>">
+							<input type="password" class="form-control" name="password" id="password" value="<?php echo $value['4']; ?>">
 						</div>
 
 						<div class="mb-3">

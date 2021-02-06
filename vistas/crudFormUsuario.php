@@ -74,22 +74,22 @@ $result = getAllFuncionario();
 				</tr>
 			</thead>
 			<?php
-			foreach ($result as $key => $value) {
+			while ($fila = mysql_fetch_array($result, MYSQL_NUM)) {
 				//printf("Nombre: %s  Apellido: %s", $fila[0], $fila[1]); 	
 			?>
 				<tr>
-					<td id="id"><?php echo $value['uid']; ?></td>
-					<td><?php echo $value['name']; ?></td>
-					<td><?php echo $value['username']; ?></td>
-					<td><?php echo $value['email']; ?></td>
-					<td><?php echo $value['password']; ?></td>
+					<td id="id"><?php echo $fila['0']; ?></td>
+					<td><?php echo $fila['1']; ?></td>
+					<td><?php echo $fila['2']; ?></td>
+					<td><?php echo $fila['3']; ?></td>
+					<td><?php echo $fila['4']; ?></td>
 					<td align="center">
-						<a href="FormEditUsuario.php?id=<?php echo $value['uid']; ?>&v2=3">
+						<a href="FormEditUsuario.php?id=<?php echo $fila['0']; ?>&v2=3">
 							<img alt="" src="../images/editar.png" width="15" height="15">
 						</a>
 					</td>
 					<td align="center">
-						<a href="../conUser.php?id=<?php echo $value['uid']; ?>&v2=2">
+						<a href="../conUser.php?id=<?php echo $fila['0']; ?>&v2=2">
 							<img alt="" src="../images/delete.png" width="15" height="15">
 						</a>
 					</td>
